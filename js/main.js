@@ -1,9 +1,7 @@
 var MultiplesApp = function() {
   'use strict';
 
-  var CONST = {
-    maxNumber: 144
-  };
+  var MAX_NUMBER = 144;
 
   var FIELD = {
     elementList: document.getElementById('number-list'),
@@ -13,7 +11,7 @@ var MultiplesApp = function() {
   var init = function() {
 
     // setup UI
-    FIELD.elementListItem = generateList(FIELD.elementList, CONST.maxNumber);
+    FIELD.elementListItem = generateList(FIELD.elementList, MAX_NUMBER);
 
     // bind UI events
     Array.prototype.forEach.call(FIELD.elementListItem, function(element, index) {
@@ -47,7 +45,7 @@ var MultiplesApp = function() {
 
       // create array of multiples
       var array = [];
-      for (var i = 0; i <= CONST.maxNumber; i++) {
+      for (var i = 0; i <= MAX_NUMBER; i++) {
         var remainder = i % elementValue;
         if (remainder === 0) {
           array.push(i)
