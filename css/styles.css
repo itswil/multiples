@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #222;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.number-list {
+  background: #fefefe;
+  margin: 100px auto;
+  max-width: 600px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.number-list li {
+  background-color: #E0F2F1;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin: 0 0 5px;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 50ms ease;
+  width: 100%;
+}
+
+.number-list li:hover {
+  background-color: #B2DFDB;
+}
+
+.number-list li.active {
+  background-color: #009688;
+  color: #fff;
+}
+
+@media (min-width: 375px) {
+  .number-list {
+    margin: 100px calc(0 - 5%/4);
+  }
+
+  .number-list li {
+    float: left;
+    margin: 0 calc(5%/4) 5px;
+    width: 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  .number-list {
+    margin: 100px calc(0 - 10%/6);
+  }
+
+  .number-list li {
+    margin: 0 calc(10%/6) 5px;
+    width: 30%;
+  }
+}
