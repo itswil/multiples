@@ -12,8 +12,10 @@ var MultiplesApp = function() {
 
   var init = function() {
 
+    // setup UI
     FIELD.elementListItem = generateList(FIELD.elementList, CONST.maxNumber);
 
+    // bind UI events
     Array.prototype.forEach.call(FIELD.elementListItem, function(element, index) {
       element.addEventListener('click', handleNumberClick);
     });
@@ -35,6 +37,7 @@ var MultiplesApp = function() {
 
   var handleNumberClick = function(event) {
     if (event.target.classList.contains('active')) {
+
       Array.prototype.forEach.call(FIELD.elementListItem, function(element, index) {
         element.classList.remove('active');
       });
@@ -42,8 +45,8 @@ var MultiplesApp = function() {
     } else {
       var elementValue = event.target.getAttribute('data-value');
 
+      // create array of multiples
       var array = [];
-
       for (var i = 0; i <= CONST.maxNumber; i++) {
         var remainder = i % elementValue;
         if (remainder === 0) {
@@ -51,11 +54,13 @@ var MultiplesApp = function() {
         }
       }
 
+      // add class to <li>s that have a data-value listed in the array
       Array.prototype.forEach.call(FIELD.elementListItem, function(element, index) {
         if (array.indexOf(parseInt(element.getAttribute('data-value'))) != -1) {
           element.classList.add('active');
         }
       });
+
     }
 
   };
