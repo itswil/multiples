@@ -23,7 +23,7 @@ var MultiplesApp = function() {
   var generateList = function(element, max) {
     for (var i = 0; i < max; i++) {
       var listItem = document.createElement('li');
-      listItem.dataset.value = i + 1;
+      listItem.setAttribute('data-value', i + 1);
       var text = document.createTextNode(i + 1);
 
       listItem.appendChild(text);
